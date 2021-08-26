@@ -1,33 +1,3 @@
-const container = document.querySelector("#container");
-
-const content = document.createElement("div");
-content.classList.add("content");
-content.textContent = "This is the glorious text-content!";
-
-container.appendChild(content);
-
-const para = document.createElement("p");
-para.textContent = "Hey I'm red!";
-para.style.color = "red";
-container.appendChild(para);
-
-const bluey = document.createElement("h3");
-bluey.textContent = "I'm a blue h3";
-bluey.style.color = "blue";
-container.appendChild(bluey);
-
-const divey = document.createElement("div");
-divey.style.borderColor = "black";
-divey.style.backgroundColor = "pink";
-container.appendChild(divey);
-
-const header1 = document.createElement("h1");
-divey.appendChild(header1);
-header1.textContent = "I'm in a div";
-const para2 = document.createElement("p");
-divey.appendChild(para2);
-para2.textContent = "ME TOO!";
-
 function computerPlay() {
 	let randChoice = Math.floor(Math.random() * 3) + 1;
 	if (randChoice == 1) return "rock";
@@ -58,25 +28,57 @@ const playerSelection = "rock";
 const computerSelection = computerPlay();
 console.log(playRound(playerSelection, computerSelection));
 
-let output = document.querySelector(".output");
-output.innerHTML = "";
-const para = document.createElement("p");
-para.textContent = "Hello?";
-output.appendChild(para);
+//Selector play
+// const container = document.querySelector("#container");
 
-for (let i = 10; i > -1; i--) {
-	const para = document.createElement("p");
-	if (i > 0 && i < 10) {
-		para.textContent = `${i}`;
-	} else if (i == 10) {
-		para.textContent = `Countdown ${i}`;
-	} else {
-		para.textContent = `Blast off!`;
-	}
-	output.appendChild(para);
-}
+// const content = document.createElement("div");
+// content.classList.add("content");
+// content.textContent = "This is the glorious text-content!";
 
-for (let i = 0; i < people.length; i++) {
-	if (people[i] === "Phil" || people[i] === "Lola") refused.textContent += people[i];
-	else admitted.textContent += people[i];
-}
+// container.appendChild(content);
+
+// const para = document.createElement("p");
+// para.textContent = "Hey I'm red!";
+// para.style.color = "red";
+// container.appendChild(para);
+
+// const bluey = document.createElement("h3");
+// bluey.textContent = "I'm a blue h3";
+// bluey.style.color = "blue";
+// container.appendChild(bluey);
+
+// const divey = document.createElement("div");
+// divey.style.borderColor = "black";
+// divey.style.backgroundColor = "pink";
+// container.appendChild(divey);
+
+// const header1 = document.createElement("h1");
+// divey.appendChild(header1);
+// header1.textContent = "I'm in a div";
+// const para2 = document.createElement("p");
+// divey.appendChild(para2);
+// para2.textContent = "ME TOO!";
+
+// More selector play
+// let output = document.querySelector(".output");
+// output.innerHTML = "";
+// const para = document.createElement("p");
+// para.textContent = "Hello?";
+// output.appendChild(para);
+
+// for (let i = 10; i > -1; i--) {
+// 	const para = document.createElement("p");
+// 	if (i > 0 && i < 10) {
+// 		para.textContent = `${i}`;
+// 	} else if (i == 10) {
+// 		para.textContent = `Countdown ${i}`;
+// 	} else {
+// 		para.textContent = `Blast off!`;
+// 	}
+// 	output.appendChild(para);
+// }
+
+// for (let i = 0; i < people.length; i++) {
+// 	if (people[i] === "Phil" || people[i] === "Lola") refused.textContent += people[i];
+// 	else admitted.textContent += people[i];
+// }
