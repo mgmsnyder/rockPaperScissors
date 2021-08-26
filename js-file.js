@@ -19,6 +19,7 @@ container.appendChild(bluey);
 const divey = document.createElement("div");
 divey.style.borderColor = "black";
 divey.style.backgroundColor = "pink";
+container.appendChild(divey);
 
 const header1 = document.createElement("h1");
 divey.appendChild(header1);
@@ -26,4 +27,3 @@ header1.textContent = "I'm in a div";
 const para2 = document.createElement("p");
 divey.appendChild(para2);
 para2.textContent = "ME TOO!";
-container.appendChild(divey);
