@@ -9,24 +9,32 @@ function computerPlay() {
 computerPlay();
 function playRound(playerSelection, computerSelection) {
 	if (playerSelection.toLowerCase() === "rock") {
-		if (computerSelection === "rock") return "You tie! Rock does not beat rock!";
-		else if (computerSelection === "paper") return "You lose! Paper covered your rock!";
-		else return "You win! Rock smashes scissors!";
-	} else if (playerSelection.toLowerCase() === "paper") {
-		if (computerSelection === "rock") return "You win! Paper covered rock!";
-		else if (computerSelection === "paper") return "You tie! Paper does not beat paper!";
-		else return "You lose! Scissors cut paper to shreds!";
-	} else if (playerSelection.toLowerCase() === "scissors") {
-		if (computerSelection === "rock") return "You lose! Rock smashed scissors!";
+		if (computerSelection === "rock") return ["tie", "You tie! Rock does not beat rock!"];
 		else if (computerSelection === "paper")
-			return "You win! Scissors cut paper to shreds!";
-		else return "You tie! Scissors does not beat scissors!";
-	} else return "You did not play the game.";
-	return;
+			return ["lose", "You lose! Paper covered your rock!"];
+		else return ["win", "You win! Rock smashes scissors!"];
+	} else if (playerSelection.toLowerCase() === "paper") {
+		if (computerSelection === "rock") return ["win", "You win! Paper covered rock!"];
+		else if (computerSelection === "paper")
+			return ["tie", "You tie! Paper does not beat paper!"];
+		else return ["lose", "You lose! Scissors cut paper to shreds!"];
+	} else if (playerSelection.toLowerCase() === "scissors") {
+		if (computerSelection === "rock") return ["lose", "You lose! Rock smashed scissors!"];
+		else if (computerSelection === "paper")
+			return ["win", "You win! Scissors cut paper to shreds!"];
+		else return ["tie", "You tie! Scissors does not beat scissors!"];
+	} else return ["", "You did not play the game."];
 }
-const playerSelection = "rock";
-const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
+// const playerSelection = "rock";
+// const computerSelection = computerPlay();
+// console.log(playRound(playerSelection, computerSelection));
+
+const btnR = document.querySelector("#button-rock");
+const btnP = document.querySelector("#button-paper");
+const btnS = document.querySelector("#button-scissors");
+btnR.addEventListener("click", () => console.log(playRound("rock", computerPlay())));
+btnP.addEventListener("click", () => console.log(playRound("paper", computerPlay())));
+btnS.addEventListener("click", () => console.log(playRound("scissors", computerPlay())));
 
 //Selector play
 // const container = document.querySelector("#container");
