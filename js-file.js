@@ -42,6 +42,12 @@ function playUpdate(choice) {
 	matchDisplay.textContent = `${results[1]}`;
 	compDisplay.textContent = `${scoreComp}`;
 	playerDisplay.textContent = `${scorePlayer}`;
+
+	if (scorePlayer == 5)
+		matchDisplay.textContent += " You have achieved victory over the machine!!!";
+	if (scoreComp == 5)
+		matchDisplay.textContent += " You have let humanity down and lost to the machine!!!";
+
 	return;
 }
 
