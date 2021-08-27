@@ -6,6 +6,7 @@ function computerPlay() {
 	else return "rock";
 	// console.log(randChoice);
 }
+
 computerPlay();
 function playRound(playerSelection, computerSelection) {
 	if (playerSelection.toLowerCase() === "rock") {
@@ -28,13 +29,28 @@ function playRound(playerSelection, computerSelection) {
 // const playerSelection = "rock";
 // const computerSelection = computerPlay();
 // console.log(playRound(playerSelection, computerSelection));
+let scorePlayer = 0;
+let scoreComp = 0;
+let playerDisplay = document.querySelector("#player-score");
+let compDisplay = document.querySelector("#comp-score");
+let matchDisplay = document.querySelector("#match-result");
+function playUpdate(choice) {
+	let results = playRound(choice, computerPlay());
+	if (results[0] === "win") scorePlayer++;
+	else if (results[0] === "lose") scoreComp++;
+
+	matchDisplay.textContent = `${results[1]}`;
+	compDisplay.textContent = `${scoreComp}`;
+	playerDisplay.textContent = `${scorePlayer}`;
+	return;
+}
 
 const btnR = document.querySelector("#button-rock");
 const btnP = document.querySelector("#button-paper");
 const btnS = document.querySelector("#button-scissors");
-btnR.addEventListener("click", () => console.log(playRound("rock", computerPlay())));
-btnP.addEventListener("click", () => console.log(playRound("paper", computerPlay())));
-btnS.addEventListener("click", () => console.log(playRound("scissors", computerPlay())));
+btnR.addEventListener("click", () => playUpdate("rock"));
+btnP.addEventListener("click", () => playUpdate("paper"));
+btnS.addEventListener("click", () => playUpdate("scissors"));
 
 //Selector play
 // const container = document.querySelector("#container");
